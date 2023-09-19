@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 10:40:48 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/19 12:13:48 by jllarena         ###   ########.fr       */
+/*   Created: 2023/09/19 10:36:42 by jllarena          #+#    #+#             */
+/*   Updated: 2023/09/19 11:57:49 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	if (c < 48 || (c > 57 && c < 65) || (c > 90 && c < 97) || c > 122)
-		{
-			return (0);
-		}
-
-	return (1);
+	size_t i;
 }
-/*
-int main (void)
+
+int main(void)
 {
-	int i = 25;
-	printf("el resultadoo es: %d\n", ft_isalnum(i));
-}*/
-	
+	char destino[50] = "holajuan";
+	char origen [20] = "adiosivan";
+	printf("el string destino es: %s\n", destino);
+	printf("el string origen es: %s\n", origen);
+	printf("la funcion original hace: %lu\n", strlcat(destino, origen, 10));
+	printf("el final es: %s\n", destino); 
+}

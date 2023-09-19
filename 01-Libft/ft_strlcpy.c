@@ -6,46 +6,46 @@
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:53:55 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/12 13:50:34 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/09/19 13:35:02 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
-#include <stddef.h>
+#include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
 	i = 0;
-	while (i < size - 1 && src[i] != '\0')
+	while (i + 1  < dstsize && src[i] /*!= '\0'*/)
    	{
-		dest[i] = src[i];
+		dst[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	if (dstsize > 0)
+	{
+		dst[i] = '\0';
+	}
+	
 
-    size_t src_len = 0;
-    while (src[src_len] != '\0')
+   // size_t src_len = 0;
+    while (src[i]/* != '\0'*/)
    	{
-		src_len++;
+		i++;
     }
-	return src_len;
+	return (i);
 }
 /*
 int main() {
-    char destination[] = "sdlgmdflkngfnjkfngne";
-    char *source = "HellosgWiorld!";
-    size_t resultado = ft_strlcpy(destination, source, sizeof(destination));
+    char destination[] = "" ;
+    char *source = "HellosgWi";
+    size_t resultado = ft_strlcpy(destination, source,0);
+
 
     printf("Cadena copiada: %s\n", destination);
     printf("Longitud de la cadena copiada: %zu\n", resultado);
-
-    return 0;
 }
 */
-
 
 /*
 int main(void)

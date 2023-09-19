@@ -6,11 +6,12 @@
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 13:52:01 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/13 11:45:52 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:10:09 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
+#include "libft.h"
+
 int	ft_isalpha(int c)
 {
 	if (c < 65 || (c > 90 && c < 97) || c > 122)
@@ -19,11 +20,11 @@ int	ft_isalpha(int c)
 	}
 	return (1);
 }
-
+/*
 int main(void)
 {
 	int i = 35;
 
 	printf("%d\n", ft_isalpha(i));
 }
-
+*/

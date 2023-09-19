@@ -6,12 +6,11 @@
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:55:12 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/13 12:08:25 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:14:19 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
+#include "libft.h"
 int ft_isascii(int c)
 {
 	if (c < 0 || c > 127)
@@ -20,8 +19,9 @@ int ft_isascii(int c)
 	}
 	return (1);
 }
+/*
 int main(void)
 {
 	int i = 127;
 	printf("el resultado es = %d\n", ft_isascii(i));
-}
+}*/

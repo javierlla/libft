@@ -6,12 +6,11 @@
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:03:25 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/15 12:49:44 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:08:08 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
+#include "libft.h"
 
 void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
@@ -25,7 +24,7 @@ void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 	}
 	return (dst);
 }
-
+/*
 int main(void)
 {
 	char str[50] = "holamundo";
@@ -34,7 +33,7 @@ int main(void)
 	printf("el string es: %s\n", str);
 	printf("el string 1 es: %s\n", str1);
 
-	memcpy(str, str1, 11);
+	memcpy(str, str1, 8);
 
 	printf("funcion original: %s\n", str);
 
@@ -44,10 +43,10 @@ int main(void)
 	printf("el string es: %s\n", str2);
 	printf("el string 1 es: %s\n", str3);
 
-	ft_memcpy(str2, str3, 11);
+	ft_memcpy(str2, str3, 8);
 
 	printf("funcion mia: %s\n", str2);
 
-}
+}*/
 
 

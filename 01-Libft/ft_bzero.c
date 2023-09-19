@@ -6,13 +6,11 @@
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:01:26 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/14 12:26:27 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/09/19 12:16:57 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<string.h>
-#include<stdio.h>
-#include<unistd.h>
+#include "libft.h"
 
 void ft_bzero(void *s, size_t n)
 {
@@ -27,7 +25,7 @@ void ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
+/*
 int main(void)
 {
 	char str[50] = "hola mundo";
@@ -46,4 +44,4 @@ int main(void)
 	write(1, &str1, 1);
 	write(1, "\n", 1);
 }
-	
+	*/

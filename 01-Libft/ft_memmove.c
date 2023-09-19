@@ -6,12 +6,11 @@
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:18:14 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/18 13:04:02 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/09/19 14:18:45 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
-#include<string.h>
+#include "libft.h"
 
 void *ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -56,21 +55,22 @@ void    *ft_memmove(void *dst, const void *src, size_t len)
 
 */
 
-/*
+
 int main(void)
 {
 	char str[50] = "holamutdo123";
 	char dst1[50]= "1234567";
 	printf("el string origen es: %s\n", str);
 	printf("el string destino es: %s\n", dst1);
-	memmove(dst1, str, 5);
+	memmove(dst1, str, 20);
 	printf("la funcion original es: %s\n", str);
 
 	char str2[50] = "holamutdo123";
 	char dst2[50] = "1234567";
 	printf("el string origen es: %s\n", str2);
 	printf("el string1 destino es: %s\n", dst2);
-	memmove(dst2, str2, 5);
+	memmove(dst2, str2, 20);
+
 	printf("la funcion original es: %s\n", str2);
 
-}*/
+}
