@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 11:55:12 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/22 12:04:55 by jllarena         ###   ########.fr       */
+/*   Created: 2023/09/20 13:30:09 by jllarena          #+#    #+#             */
+/*   Updated: 2023/09/22 13:39:28 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_tolower(int c)
 {
-	if (c < 0 || c > 127)
+	while (c > 64 && c < 91)
 	{
-		return (0);
+		c = c + 32;
 	}
-	return (1);
+	return (c);
 }
 /*
 int main(void)
 {
-	int i = 127;
-	printf("el resultado es = %d\n", ft_isascii(i));
+	int i = 'A';
+
+	printf("la letra es: %c\n", i);
+	printf("despues es: %c\n", ft_tolower(i));
 }*/

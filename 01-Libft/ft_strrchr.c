@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 11:55:12 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/22 12:04:55 by jllarena         ###   ########.fr       */
+/*   Created: 2023/09/20 17:54:38 by jllarena          #+#    #+#             */
+/*   Updated: 2023/09/22 13:41:51 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	if (c < 0 || c > 127)
+	char	*str;
+	size_t	lon;
+
+	str = (char *)s;
+	lon = ft_strlen(str) + 1;
+	while (lon--)
 	{
-		return (0);
+		if (str[lon] == (unsigned char)c)
+		{
+			return (&str[lon]);
+		}
 	}
-	return (1);
+	return (0);
 }
 /*
 int main(void)
 {
-	int i = 127;
-	printf("el resultado es = %d\n", ft_isascii(i));
+	char str[] = "holapoota";
+	char i;
+	i = 'o';
+	printf("el resultado es: %s\n", ft_strrchr(str, i));
 }*/

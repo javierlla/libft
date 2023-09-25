@@ -1,28 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 11:55:12 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/22 12:04:55 by jllarena         ###   ########.fr       */
+/*   Created: 2023/09/21 10:37:38 by jllarena          #+#    #+#             */
+/*   Updated: 2023/09/22 13:42:29 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if (c < 0 || c > 127)
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
+
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	i = 0;
+	while ((str1[i] || str2[i]) && (i < n))
 	{
-		return (0);
+		if (str1[i] != str2[i])
+		{
+			return (str1[i] - str2[i]);
+		}
+		i++;
 	}
-	return (1);
+	return (0);
 }
 /*
 int main(void)
 {
-	int i = 127;
-	printf("el resultado es = %d\n", ft_isascii(i));
+	char str11[] = "hozap";
+
+	char str22[] = "hoios";
+
+	printf("la funcion original: %d\n", ft_strncmp(str11, str22, 1));
 }*/

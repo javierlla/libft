@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/13 11:55:12 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/22 12:04:55 by jllarena         ###   ########.fr       */
+/*   Created: 2023/09/21 13:49:57 by jllarena          #+#    #+#             */
+/*   Updated: 2023/09/22 13:44:29 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	if (c < 0 || c > 127)
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t			i;
+
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		return (0);
+		if (str1[i] != str2[i])
+		{
+			return (str1[i] - str2[i]);
+		}
+		i++;
 	}
-	return (1);
+	return (0);
 }
 /*
 int main(void)
 {
-	int i = 127;
-	printf("el resultado es = %d\n", ft_isascii(i));
+	char st1[] = "hola";
+	char st2[] = "hopa";
+
+	printf("el reslado es: %d\n", ft_memcmp(st1, st2, 1));
 }*/
