@@ -6,7 +6,7 @@
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 09:48:14 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/26 11:51:45 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/10/02 17:39:48 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,3 @@ int main(void)
    printf("%d %d", ft_atoi(s), atoi(s));
    return (0);
 }*/
-

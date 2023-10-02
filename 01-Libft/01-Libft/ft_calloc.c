@@ -6,15 +6,15 @@
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 11:16:24 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/29 13:10:26 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/10/02 17:39:46 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- void	*ft_calloc(size_t count, size_t size)
- {
-	void *dst;
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*dst;
 
 	dst = malloc(size * count);
 	if (!dst)
@@ -22,8 +22,8 @@
 		return (0);
 	}
 	ft_bzero(dst, size * count);
-	return(dst);
- }
+	return (dst);
+}
 /* 
 int main(void)
 {

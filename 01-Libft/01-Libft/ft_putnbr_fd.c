@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/21 13:49:57 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/29 14:41:12 by jllarena         ###   ########.fr       */
+/*   Created: 2023/10/02 17:16:11 by jllarena          #+#    #+#             */
+/*   Updated: 2023/10/02 17:34:42 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	size_t			i;
-
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	if (n == -2147483648)
 	{
-		if (str1[i] != str2[i])
-		{
-			return (str1[i] - str2[i]);
-		}
-		i++;
+		write (fd, "-2147483648", 11);
 	}
-	return (0);
+	else
+	{
+		if (n < 0)
+		{
+			ft_putchar_fd('-', fd);
+			n = -n;
+		}
+		if (n > 9)
+		{
+			ft_putnbr_fd(n / 10, fd);
+		}
+		ft_putchar_fd('0' + (n % 10), fd);
+	}
 }
 /*
 int main(void)
 {
-	char st1[] = "hola";
-	char st2[] = "hopa";
-
-	printf("el reslado es: %d\n", ft_memcmp(st1, st2, 3));
-	printf("el reslado es: %d\n", memcmp(st1, st2, 3));
-}
-*/
+int     nmb = -2147483648;
+ft_putnbr_fd(nmb, 1);
+return (0);
+}*/
