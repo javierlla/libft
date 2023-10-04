@@ -1,43 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 16:44:09 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/03 10:53:18 by jllarena         ###   ########.fr       */
+/*   Created: 2023/10/03 13:33:56 by jllarena          #+#    #+#             */
+/*   Updated: 2023/10/04 11:08:05 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*str;
 	size_t	i;
 
+	if (s == 0 || f == 0)
+		return ;
 	i = 0;
-	str = (char *)s;
-	while (str[i])
+	while (s[i])
 	{
-		if (str[i] == (unsigned char)c)
-		{
-			return (&str[i]);
-		}
+		f(i, &s[i]);
 		i++;
 	}
-	if ((unsigned char)c == '\0')
-	{
-		return (&str[i]);
-	}
-	return (0);
 }
 /*
+void ft_change(unsigned int i, char *str)
+{
+	(void)i;
+    if (islower(*str)) 
+    {
+        *str = toupper(*str); 
+    }
+}
+
 int main(void)
 {
-	char str = 0;
-	char i;
-	i = 'o';
-	printf("el resultadi es: %s\n", ft_strchr(str, i));
+    char string[] = "Holaag";
+    printf("string sin modificar = %s\n", string);
+    ft_striteri(string, ft_change);
+	printf("string modificado = %s\n", string);
+    return(0);
 }*/

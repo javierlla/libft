@@ -6,61 +6,77 @@
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 17:40:20 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/04 15:01:37 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/10/04 14:06:21 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-#include "ft_strlcpy.c"
-#include "ft_strlen.c"
-#include "ft_strdup.c"
-#include "ft_substr.c"*/
 
-int	ft_check(char c, char const *set)
+static int	ft_check(char c, char const *st1)
 {
 	int	i;
 
 	i = 0;
-	while (set[i])
+	while (st1)
 	{
-		if (set[i] == c)
+		if (st1[i] == c)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+/*static char	ft_inicio(char const *s1, char const *set)
 {
 	size_t	ini;
-	size_t	final;
+
+	ini = 0;
+	while(s1[ini] && ft_check(set[ini], s1))
+		ini++;
+	return (ini);
+}
+
+static char ft_final(char const *s1, char const *set)
+{
+	size_t	fin;
+
+	fin = ft_strlen(s1);
+	while
+
+}*/
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*str1;
+	size_t	ini;
+	size_t	fin;
+	size_t	i;
 
 	if (s1 == 0 || set == 0)
 		return (0);
 	ini = 0;
-	while (ini <= ft_strlen(s1) && ft_check(s1[ini], set) == 1)
+	while (s1[ini] != '\0' && ft_check(set[ini], s1))
 		ini++;
-	if (ini == ft_strlen(s1))
-		return(ft_strdup(""));
-	ini = 0;
-	final = ft_strlen(s1);
-	final--;
-	while (ini <= (ft_strlen(s1) / 2) && ft_check(s1[ini], set) == 1)
+	fin = strlen(s1);
+	while (s1[fin] != '\0' && ft_check(set[fin], s1))
+		fin-- ;
+	str1 = malloc(sizeof (char) * (fin - ini + 1));
+	if (!str1)
+		return (0);
+	i = 0;
+	while (ini < fin)
+	{
+		str1[i] = s1[ini];
 		ini++;
-	while (final >= (ft_strlen(s1) / 2) && ft_check(s1[final], set) == 1)
-		final--;
-	final++;/*
-	printf("ini, %lu\n", ini);
-	printf("final, %lu\n", final);
-	printf("strlen, %lu\n", ft_strlen(s1));*/
-	if (ini == 0 && final == ft_strlen(s1))
-		return(ft_strdup(s1));
-	return (ft_substr(s1, ini, (final - ini)));
+	}
+	str1[i] = 0;
+	return (str1);
 }
-
-/*int main(void)
+/*
+int main(void)
 {
-	printf("%s\n", ft_strtrim("erttre", "tre"));
-	return (0);
+	char st1[] = "holamundoholamundo";
+	char stt[] = "mundo";
+
+	printf("%s\n", ft_strtrim(st1,stt));
 }*/
