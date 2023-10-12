@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jllarena <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 14:03:25 by jllarena          #+#    #+#             */
-/*   Updated: 2023/09/22 13:21:23 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/10/05 12:25:30 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*destino;
+	unsigned char	*source;
 
+	destino = (unsigned char *)dst;
+	source = (unsigned char *)src;
 	i = 0;
-	if (n == 0 || dst == src)
+	if (n == 0 || destino == source)
 	{
-		return (dst);
+		return (destino);
 	}
 	while (i < n)
 	{
-		((unsigned char *)dst)[i] = ((const char *)src)[i];
+		destino[i] = source[i];
 		i++;
 	}
-	return (dst);
+	return (destino);
 }
 /*
 int main(void)
@@ -53,6 +57,4 @@ int main(void)
 	
 	printf("funcion mia: %s\n", ft_memcpy(((void *)0), ((void *)0), 3));
 
-}
-
-*/
+}*/

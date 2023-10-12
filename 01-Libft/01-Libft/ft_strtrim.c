@@ -6,7 +6,7 @@
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 17:40:20 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/04 15:01:37 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/10/05 12:33:06 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ini <= ft_strlen(s1) && ft_check(s1[ini], set) == 1)
 		ini++;
 	if (ini == ft_strlen(s1))
-		return(ft_strdup(""));
+		return (ft_strdup(""));
 	ini = 0;
 	final = ft_strlen(s1);
 	final--;
@@ -50,12 +50,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		ini++;
 	while (final >= (ft_strlen(s1) / 2) && ft_check(s1[final], set) == 1)
 		final--;
-	final++;/*
-	printf("ini, %lu\n", ini);
-	printf("final, %lu\n", final);
-	printf("strlen, %lu\n", ft_strlen(s1));*/
+	final++;
 	if (ini == 0 && final == ft_strlen(s1))
-		return(ft_strdup(s1));
+		return (ft_strdup(s1));
 	return (ft_substr(s1, ini, (final - ini)));
 }
 
