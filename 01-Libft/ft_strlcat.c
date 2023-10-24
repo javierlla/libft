@@ -6,7 +6,7 @@
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 10:36:42 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/02 17:49:11 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/10/23 18:24:33 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (destino + origen);
 }	
 
-/*
+
 int main(void)
 {
 	char destino[50] = "holajuan";
 	char origen [20] = "adiosivan";
 	printf("el string destino es: %s\n", destino);
 	printf("el string origen es: %s\n", origen);
-	printf("la funcion original hace: %lu\n", ft_strlcat(destino, origen, 10));
+	printf("la funcion original suma: %lu\n", ft_strlcat(destino, origen, 10));
 	printf("el final es: %s\n", destino); 
-}*/
+}

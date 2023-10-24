@@ -6,10 +6,9 @@
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/21 16:59:47 by alvicina          #+#    #+#             */
-/*   Updated: 2023/10/20 12:41:06 by jllarena         ###   ########.fr       */
+/*   Updated: 2023/10/24 09:18:51 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
@@ -39,8 +38,8 @@ static size_t	ft_count_word(char const *s, char c)
 
 static char	**ft_free(char **split)
 {
-	int limit;
-	
+	int	limit;
+
 	limit = 0;
 	while (split[limit] != 0)
 	{
@@ -81,8 +80,8 @@ char	**ft_split(char const *s, char c)
 	split[limit] = 0;
 	return (split);
 }
-
-/*int main(void)
+/*
+int main(void)
 {
     char str[] = "hola soy yo_f tr e";
     char c = ' ';
@@ -91,7 +90,7 @@ char	**ft_split(char const *s, char c)
     
     if (result)
     {
-        size_t word_count = ft_words(str, c);
+        size_t word_count = ft_count_word(str, c);
         printf("El número de palabras es: %zu\n", word_count);
         
         size_t i = 0;
@@ -115,4 +114,23 @@ char	**ft_split(char const *s, char c)
     
     return (0);
 }*/
+/*int main(void)
+{
+	//char str[] = "hola sooy javier";
+	//char c = ' ';
 
+	//printf("el numero de palabras son : %zu \n", ft_count_word(str, c));	
+	char **resultado = ft_split("Hola soy javier", ' ');
+	size_t i = 0;
+	if (resultado)
+	{
+		while (i < ft_count_word("Hola soy javier", ' '))
+		{	
+			printf("les: %s \n", resultado[i]);
+			//free(resultado[i]);
+			i++;
+		}
+	}
+	//free(resultado);
+	system("leaks -q a.out");
+}*/

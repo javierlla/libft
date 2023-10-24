@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 12:02:38 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/20 12:29:58 by jllarena         ###   ########.fr       */
+/*   Created: 2023/10/23 10:58:08 by jllarena          #+#    #+#             */
+/*   Updated: 2023/10/23 11:05:47 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list  *last;
-    
-    last = ft_lstlast(*lst);
-    if (!new)
-        return ;
-    if (!*lst)
-        *lst = new;
-    if (last == NULL)
-        return ;
-    last -> next = new;
+	t_list	*last;
+
+	last = ft_lstlast(*lst);
+	if (!new)
+		return ;
+	if (!*lst)
+		*lst = new;
+	if (last == NULL)
+		return ;
+	last -> next = new;
 }
 /*int main(void)
 {
@@ -47,7 +47,6 @@ void ft_lstadd_back(t_list **lst, t_list *new)
     last->next = NULL;
 
 
-    // Las listas están separadas. Primero las unimos y despues chequeamos que esta OK
     ft_lstadd_back(&lista, last);
     last = ft_lstlast(lista);
     printf("El ultimo nodo de la lista unida contiene: %s\n", last->content);

@@ -1,37 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/11 17:22:06 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/13 12:57:14 by jllarena         ###   ########.fr       */
+/*   Created: 2023/10/23 11:01:12 by jllarena          #+#    #+#             */
+/*   Updated: 2023/10/23 11:27:47 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (!*lst)
+	size_t	i;
+
+	i = 0;
+	while (lst != NULL)
 	{
-		*lst = new;	
-		return ;
+		lst = lst -> next;
+		i++;
 	}
-	new -> next = *lst;
-	*lst = new;
+	return (i);
 }
 /*int main(void)
 {
-	t_list *past_list;
-	t_list *new_list;
-	char str_past[] = "hola";
-	char str_new[] = "adios";
-	new_list = malloc(sizeof(t_list) * 1);
-	past_list = malloc(sizeof(t_list) * 1);
-	new_list -> content = str_new;
-	past_list -> content = str_past;
-	ft_lstadd_front(&past_list, new_list);
-	printf("ahora el nodo es: %s", past_list -> content);
+    t_list  *nodo1;
+    t_list  *nodo2;
+    t_list  *nodo3;
+
+    nodo1 = malloc(sizeof(t_list) * 1);
+    nodo2 = malloc(sizeof(t_list) * 1);
+    nodo3 = malloc(sizeof(t_list) * 1);
+    nodo1 -> next = nodo2;
+    nodo2 -> next = nodo3;
+    nodo3 -> next = NULL;
+	
+	printf("el numero de nodods es: %d", ft_lstsize(nodo1));
+
 }*/

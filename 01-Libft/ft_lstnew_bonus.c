@@ -1,42 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 10:12:31 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/12 11:18:20 by jllarena         ###   ########.fr       */
+/*   Created: 2023/10/23 11:00:50 by jllarena          #+#    #+#             */
+/*   Updated: 2023/10/23 11:26:49 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+t_list	*ft_lstnew(void *content)
 {
-	size_t  i;
+	t_list	*list;
 
-	i = 0;
-	while (lst != NULL)
-	{
-		lst = lst -> next;
-		i++;
-	}
-	return (i);
+	list = malloc(sizeof(t_list) * 1);
+	if (list == 0)
+		return (0);
+	list -> content = content;
+	list -> next = 0;
+	return (list);
 }
 /*int main(void)
 {
-    t_list  *nodo1;
-    t_list  *nodo2;
-    t_list  *nodo3;
-
-    nodo1 = malloc(sizeof(t_list) * 1);
-    nodo2 = malloc(sizeof(t_list) * 1);
-    nodo3 = malloc(sizeof(t_list) * 1);
-    nodo1 -> next = nodo2;
-    nodo2 -> next = nodo3;
-    nodo3 -> next = NULL;
-	
-	printf("el numero de nodods es: %d", ft_lstsize(nodo1));
-
+    t_list *nodo;
+    nodo = malloc (sizeof(t_list) * 1);
+    nodo -> content = "hola";
+    
+    ft_lstnew((void *)nodo -> content);
+    printf("el nodo: %s", nodo -> content);
 }*/

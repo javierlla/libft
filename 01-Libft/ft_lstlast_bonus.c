@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 11:22:05 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/13 12:34:37 by jllarena         ###   ########.fr       */
+/*   Created: 2023/10/23 11:00:11 by jllarena          #+#    #+#             */
+/*   Updated: 2023/10/23 11:24:30 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-    if (!lst)
-        return (NULL);
-    while (lst -> next != NULL)
-        lst = lst -> next;
-    return (lst);
+	if (!lst)
+		return (NULL);
+	while (lst -> next != NULL)
+		lst = lst -> next;
+	return (lst);
 }
 /*int main(void)
 {

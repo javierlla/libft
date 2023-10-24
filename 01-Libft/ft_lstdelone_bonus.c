@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 17:10:17 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/19 13:23:51 by jllarena         ###   ########.fr       */
+/*   Created: 2023/10/23 10:59:32 by jllarena          #+#    #+#             */
+/*   Updated: 2023/10/23 11:19:21 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (!lst || !del)
 		return ;
-	(*del) (lst -> content);
+	(*del)(lst -> content);
 	free (lst);
 }
 
@@ -25,35 +25,6 @@ void del_free(void *data)
 {
     free(data);
 }
-
-int main() 
-{
-    t_list *element = malloc(sizeof(t_list));
-    element->content = malloc(sizeof(int));
-	int num = 42;
-	int *put_num = malloc(sizeof(int));
-	*put_num = num;
-    element->content = put_num; 
-
-
-    ft_lstdelone(&element, &del_free);
-
-    if (element == (void *)0) 
-	{
-        printf("Elemento eliminado con éxito.\n");
-    }
-	else
-	{
-        printf("Error: el elemento no se eliminó correctamente.\n");
-    }
-    return 0;
-}*/
-
-
-/*
-#include "libft.h"
-#include <stdio.h>
-
 int main() {
    
   	t_list  *nodo1;
@@ -95,4 +66,3 @@ int main() {
 
     return 0;
 }*/
-

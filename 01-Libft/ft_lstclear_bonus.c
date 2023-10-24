@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jllarena <jllarena@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/18 17:59:20 by jllarena          #+#    #+#             */
-/*   Updated: 2023/10/20 12:11:59 by jllarena         ###   ########.fr       */
+/*   Created: 2023/10/23 10:59:02 by jllarena          #+#    #+#             */
+/*   Updated: 2023/10/23 11:13:36 by jllarena         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*new;
+	t_list	*next;
+
+	new = *lst;
 	if (!*lst || !del)
 		return ;
-	
-	t_list *new = *lst;
-    t_list *next;
-
-    while (new != NULL)
-    {
-        next = new ->next;
-        (*del)(new->content);
-        free(new);
-        new = next;
-    }
-
-    *lst = NULL;
+	while (new != NULL)
+	{
+		next = new ->next;
+		(*del)(new->content);
+		free(new);
+		new = next;
+	}
+	*lst = NULL;
 }
 /*
 void del_delete(void* data)
